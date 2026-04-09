@@ -8,6 +8,7 @@ export interface Pet {
 
 export interface HealthRecord {
   id: string;
+  petName: string;
   date: string;
   type: 'Vaccination' | 'Lab Report' | 'Prescription' | 'Checkup';
   title: string;
@@ -19,20 +20,32 @@ export interface Product {
   id: string;
   name: string;
   price: number;
-  category: 'Food' | 'Accessories' | 'Health';
+  originalPrice?: number;
+  category: 'Food' | 'Accessories' | 'Health' | 'Grooming';
   image: string;
   rating: number;
+  reviewCount: number;
+  description: string;
+  stock: number;
+  badge?: 'Best Seller' | 'New' | 'Sale' | 'Limited';
+}
+
+export interface CartItem {
+  product: Product;
+  quantity: number;
 }
 
 export interface ForumPost {
   id: string;
   author: string;
+  avatar: string;
   title: string;
   content: string;
   likes: number;
   comments: number;
   tags: string[];
   date: string;
+  isLiked?: boolean;
 }
 
 export interface Vet {
@@ -41,6 +54,26 @@ export interface Vet {
   specialty: string;
   distance: string;
   rating: number;
+  reviewCount: number;
   verified: boolean;
   image: string;
+  phone: string;
+  hours: string;
+  services: string[];
+}
+
+export interface BookingRequest {
+  vetId: string;
+  vetName: string;
+  petName: string;
+  date: string;
+  time: string;
+  notes: string;
+}
+
+export interface ToastMessage {
+  id: string;
+  type: 'success' | 'error' | 'info';
+  title: string;
+  message?: string;
 }
