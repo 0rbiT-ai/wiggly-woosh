@@ -72,6 +72,12 @@
   input, textarea, select {
     @apply font-sans;
   }
+
+  /* Style select options for dark mode */
+  select option {
+    background-color: #141414;
+    color: white;
+  }
 }
 
 /* Glassmorphism */
